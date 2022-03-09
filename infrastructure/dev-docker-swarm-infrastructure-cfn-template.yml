@@ -73,7 +73,13 @@ Resources:
     Type: "AWS::EC2::LaunchTemplate"
     Properties:
       LaunchTemplateData:
-        ImageId: ami-0947d2ba12ee1ff75
+        InstanceMarketOptions:
+          MarketType: spot
+          SpotOptions:
+            MaxPrice: "0.020"
+            SpotInstanceType: persistent    #persistent one-time
+            InstanceInterruptionBehavior: stop  #hibernate | stop | terminate
+        ImageId: ami-0e1d30f2c40c4c701
         InstanceType: t2.medium
         KeyName: !Ref KeyPairName
         IamInstanceProfile: 
