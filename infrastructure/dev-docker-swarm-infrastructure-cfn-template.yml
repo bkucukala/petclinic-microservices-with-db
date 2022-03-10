@@ -80,7 +80,7 @@ Resources:
             SpotInstanceType: persistent    #persistent one-time
             InstanceInterruptionBehavior: stop  #hibernate | stop | terminate
         ImageId: ami-0e1d30f2c40c4c701
-        InstanceType: t2.medium
+        InstanceType: t3a.medium
         KeyName: !Ref KeyPairName
         IamInstanceProfile: 
           Arn: !GetAtt EC2Profile.Arn
